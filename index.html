@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+
+    <script scr="main.js"></script>
+
+  </head>
+
+  <body>
+    
+    <a-scene background="color:#026F90">
+
+      <a-entity id="look"  look-controls camera position="5 15 20"></a-entity>
+
+      <!--Asset Management-->
+      <a-assets timeout="10000">        
+        <a-asset-item
+          id="circuit"
+          src="./assets/models/circuit/scene.gltf"
+        ></a-asset-item>
+
+        <a-asset-item
+          id="car"
+          src="./assets/models/car/scene.gltf"
+        ></a-asset-item>
+        
+      </a-assets>
+
+      <!-- racetrack  -->
+      <a-entity
+        id="circuit"
+        gltf-model="#circuit"
+        position="0 0 0"
+        scale="0.3 0.3 0.3"
+        
+        
+      >
+      </a-entity>
+
+      <!-- car -->
+      <a-entity
+        id="car"
+        gltf-model="#car"
+        position="20 0 0"
+        scale="0.8 0.8"
+        rotation="0 -90 0"
+        car-movement
+      >
+      </a-entity>
+
+      <!--text-->
+      <a-entity id="header" position="1 -4 5">
+        <!-- Title -->
+        <a-entity
+          position="5 20 0"
+          text="font: mozillavr; align: center; width: 40; color: black; value: RACING GAME"
+        ></a-entity>
+
+
+      <a-entity id="car" car-movement></a-entity>
+
+
+    </a-scene>
+  </body>
+</html>
